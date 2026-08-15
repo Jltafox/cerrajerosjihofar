@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import SchemaNegocio from '../components/SchemaNegocio.astro';
+import negocio from '../data/negocio.json';
+
+// Página de confianza (memoria §8): técnico real, cara visible, prueba de confianza.
+// El nombre del técnico, la foto y los datos concretos están PENDIENTES (memoria §10):
+// aquí van placeholders. Es el diferencial frente a El Manya (sin persona real) y
+// Coop de Clau. Rellenar cuando el cliente facilite foto y datos.
+
+const breadcrumb = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Sobre nosotros', path: '/sobre-nosotros/' },
+];
+const title = `Sobre nosotros · Cerrajero de confianza en ${negocio.nap.localidad} | ${negocio.marca}`;
+const description = `Un cerrajero real y cercano en ${negocio.nap.localidad}. Precio cerrado por teléfono antes de salir, sin call center de por medio.`;
+---
+<Base title={title} description={description} canonicalPath="/sobre-nosotros/">
+  <SchemaNegocio slot="head" breadcrumb={breadcrumb} />
+
+  <section class="bg-brand-900 text-white">
+    <div class="max-w-5xl mx-auto px-4 py-12 text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold">Un cerrajero real, no un call center</h1>
+      <p class="mt-4 text-lg text-slate-200 max-w-2xl mx-auto">Detrás del teléfono hay una persona de {negocio.nap.localidad} que te da el precio cerrado antes de salir y responde por lo que hace.</p>
+    </div>
+  </section>
+
+  {negocio.tecnico_provisional && (
+    <div class="max-w-3xl mx-auto px-4 pt-8">
+      <p class="rounded-md bg-amber-50 border border-amber-300 text-amber-900 text-sm px-4 py-3">
+        <strong>Pendiente:</strong> nombre del técnico, foto real y datos concretos. Esta página es la prueba de confianza (cara visible) que nos diferencia de la competencia — rellenar en cuanto haya material.
+      </p>
+    </div>
+  )}
+
+  <section class="max-w-3xl mx-auto px-4 py-10 space-y-8">
+    <div>
+      <h2 class="text-xl font-bold text-brand-900">Trato cercano y directo</h2>
+      <p class="mt-2 text-slate-700 leading-relaxed">Cuando llamas, hablas con quien va a ir a tu puerta, no con una centralita que deriva a un desconocido. Eso nos permite darte un precio cerrado real y un tiempo de llegada que se cumple.</p>
+    </div>
+    <div>
+      <h2 class="text-xl font-bold text-brand-900">Precio cerrado, sin sorpresas</h2>
+      <p class="mt-2 text-slate-700 leading-relaxed">Te confirmamos el precio por teléfono antes de desplazarnos y lo dejamos por escrito antes de tocar la puerta. Es nuestra forma de trabajar, no una promoción.</p>
+    </div>
+    <div>
+      <h2 class="text-xl font-bold text-brand-900">Abrir sin romper</h2>
+      <p class="mt-2 text-slate-700 leading-relaxed">Priorizamos las técnicas no destructivas. Nuestro objetivo es que recuperes el acceso con el menor daño y coste posibles.</p>
+    </div>
+
+    <div class="rounded-xl bg-slate-50 border border-slate-200 p-6 text-center">
+      <p class="font-semibold text-brand-900">¿Hablamos?</p>
+      <a href={`tel:${negocio.telefono_e164}`} class="inline-block mt-3 rounded-lg bg-brand-700 text-white font-semibold px-6 py-3 hover:bg-brand-900">📞 {negocio.telefono_display}</a>
+    </div>
+  </section>
+</Base>

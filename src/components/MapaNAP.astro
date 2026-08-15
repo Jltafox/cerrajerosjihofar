@@ -1,0 +1,63 @@
+---
+// Bloque MAPA + NAP · señal de proximidad local (NAP consistente con GBP).
+// Mapa OpenStreetMap embebido (sin API key). Dirección PENDIENTE de decisión del cliente (D6):
+// mientras tanto se centra en Granollers como ejemplo.
+import negocio from '../data/negocio.json';
+
+interface Props {
+  lat?: number;
+  lng?: number;
+  localidad?: string;
+}
+const { lat = negocio.nap.lat, lng = negocio.nap.lng, localidad = negocio.nap.localidad } = Astro.props;
+const d = 0.012; // margen del bbox (~1.3 km)
+const bbox = `${lng - d}%2C${lat - d}%2C${lng + d}%2C${lat + d}`;
+const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat}%2C${lng}`;
+---
+<section id="ubicacion" class="max-w-5xl mx-auto px-4 py-12">
+  <h2 class="text-2xl sm:text-3xl font-bold text-brand-900 text-center mb-8">Dónde estamos y a quién atendemos</h2>
+
+  <div class="grid gap-6 md:grid-cols-2 items-stretch">
+    <div class="rounded-xl overflow-hidden border border-slate-200 min-h-[300px]">
+      <iframe
+        title={`Mapa de ${localidad}`}
+        src={mapSrc}
+        loading="lazy"
+        class="w-full h-full min-h-[300px]"
+        style="border:0"
+      ></iframe>
+    </div>
+
+    <div class="rounded-xl border border-slate-200 p-6 flex flex-col justify-center">
+      <p class="text-lg font-bold text-brand-900">{negocio.nap.nombre}</p>
+
+      {negocio.provisional && (
+        <p class="mt-1 text-xs text-amber-700">Dirección y ubicación exacta pendientes (las decide el cliente).</p>
+      )}
+
+      <dl class="mt-4 space-y-3 text-sm">
+        <div>
+          <dt class="font-semibold text-slate-500">Dirección</dt>
+          <dd>{negocio.nap.calle}</dd>
+          <dd>{negocio.nap.cp} {negocio.nap.localidad} ({negocio.nap.region})</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-slate-500">Teléfono</dt>
+          <dd><a href={`tel:${negocio.telefono_e164}`} class="text-brand-700 font-semibold">{negocio.telefono_display}</a></dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-slate-500">Horario</dt>
+          <dd>{negocio.nap.horario_texto}</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-slate-500">Zona de servicio</dt>
+          <dd>{negocio.nap.zona_servicio.join(' · ')}</dd>
+        </div>
+      </dl>
+
+      <a href={`tel:${negocio.telefono_e164}`} class="mt-6 inline-block text-center rounded-lg bg-brand-700 text-white font-semibold px-5 py-2.5 hover:bg-brand-900">
+        📞 Llamar · {negocio.telefono_display}
+      </a>
+    </div>
+  </div>
+</section>

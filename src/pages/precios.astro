@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import SchemaNegocio from '../components/SchemaNegocio.astro';
+import Precios from '../components/Precios.astro';
+import MapaNAP from '../components/MapaNAP.astro';
+import Resenas from '../components/Resenas.astro';
+import negocio from '../data/negocio.json';
+
+// FAQ de intención de precio/diagnóstico (memoria §3) — visible + FAQPage schema (H1).
+const faq = [
+  { q: '¿Cuánto cuesta una apertura de puerta en Granollers?', a: 'Te damos el precio cerrado por teléfono antes de salir. Una apertura diurna estándar parte de una tarifa orientativa que confirmamos según el tipo de puerta y cerradura. Sin sorpresas al llegar.' },
+  { q: '¿El precio que me decís por teléfono es el final?', a: 'Sí. Confirmamos el precio antes de desplazarnos y lo dejamos por escrito antes de tocar la puerta. Lo que hablamos es lo que pagas.' },
+  { q: '¿Cobráis el desplazamiento?', a: 'Te informamos del desplazamiento por adelantado, antes de salir. Nunca aparece como sorpresa en la factura.' },
+  { q: '¿Cuánto cuesta cambiar un bombín?', a: 'Depende de si es estándar o de alta seguridad. En ambos casos te damos el precio cerrado del bombín y de la mano de obra antes de empezar.' },
+  { q: '¿Trabajáis las 24 horas?', a: `Sí, atendemos urgencias 24 horas en ${negocio.nap.localidad} y alrededores. En horario nocturno o festivo se aplica un recargo que también se te comunica antes de salir.` },
+];
+
+const breadcrumb = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Precios', path: '/precios/' },
+];
+
+const title = `Precios de cerrajería en ${negocio.nap.localidad} | ${negocio.marca}`;
+const description = 'Precio cerrado por teléfono antes de salir. Tarifas orientativas de apertura, bombines y cerraduras en Granollers. Sin sorpresas al llegar.';
+---
+<Base title={title} description={description} canonicalPath="/precios/">
+  <SchemaNegocio slot="head" serviceType="Cerrajería" faq={faq} breadcrumb={breadcrumb} />
+
+  <!-- HERO (H4: claim + CTA telefónico visible sin scroll) -->
+  <section class="bg-brand-900 text-white">
+    <div class="max-w-5xl mx-auto px-4 py-14 text-center">
+      <p class="text-accent-500 font-semibold uppercase tracking-wide text-sm">Precio cerrado · sin sorpresas</p>
+      <h1 class="mt-3 text-3xl sm:text-4xl font-bold">Precios cerrajero {negocio.nap.localidad}</h1>
+      <p class="mt-4 text-xl font-semibold text-white">{negocio.posicionamiento.claim}</p>
+      <p class="mt-2 text-lg text-slate-200 max-w-2xl mx-auto">{negocio.posicionamiento.subclaim}</p>
+      <a href={`tel:${negocio.telefono_e164}`} class="inline-block mt-6 rounded-lg bg-accent-500 text-brand-900 font-bold px-6 py-3 hover:brightness-95">
+        📞 Pedir precio cerrado · {negocio.telefono_display}
+      </a>
+    </div>
+  </section>
+
+  <Precios />
+
+  <!-- FAQ visible (coincide con el FAQPage schema) -->
+  <section id="faq" class="max-w-3xl mx-auto px-4 py-12">
+    <h2 class="text-2xl sm:text-3xl font-bold text-brand-900 text-center mb-8">Preguntas frecuentes sobre precios</h2>
+    <div class="space-y-3">
+      {faq.map((f) => (
+        <details class="rounded-lg border border-slate-200 px-4 py-3">
+          <summary class="font-semibold text-slate-800 cursor-pointer">{f.q}</summary>
+          <p class="mt-2 text-sm text-slate-600">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <Resenas />
+  <MapaNAP />
+</Base>

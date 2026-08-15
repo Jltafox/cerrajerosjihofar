@@ -1,0 +1,40 @@
+[
+  {
+    "slug": "amaestramiento-de-llaves",
+    "nav": "Amaestramiento de llaves",
+    "h1": "Amaestramiento de llaves para comunidades en Granollers",
+    "serviceType": "Amaestramiento de llaves",
+    "meta": "Amaestramiento e igualamiento de bombines para comunidades de vecinos en Granollers y el Vallès Oriental. Presupuesto cerrado por proyecto.",
+    "intro": "Amaestramos las llaves de tu comunidad para que una misma llave abra portal, trastero y zonas comunes, con niveles de acceso definidos por escalera o servicio. También igualamos bombines para simplificar la gestión. Presupuesto cerrado por proyecto antes de empezar.",
+    "incluye": [
+      "Amaestramiento de portal, trasteros y zonas comunes",
+      "Niveles de acceso por escalera o por servicio",
+      "Igualamiento de bombines de la comunidad",
+      "Llaves de alta seguridad con tarjeta de propiedad (opcional)",
+      "Presupuesto cerrado por proyecto"
+    ],
+    "faq": [
+      { "q": "¿Qué es el amaestramiento de llaves?", "a": "Es un sistema en el que una llave maestra abre varias puertas (portal, trastero, cuarto de contadores) mientras cada vecino solo abre lo suyo. En Granollers lo diseñamos a medida de la comunidad." },
+      { "q": "¿Cómo se presupuesta para una comunidad?", "a": "Por proyecto, según el número de puertas y de llaves. Te damos un presupuesto cerrado por escrito antes de empezar, sin sorpresas para la comunidad." }
+    ]
+  },
+  {
+    "slug": "mantenimiento-comunidades",
+    "nav": "Mantenimiento de comunidades",
+    "h1": "Mantenimiento de cerrajería para comunidades en Granollers",
+    "serviceType": "Mantenimiento de cerrajería para comunidades",
+    "meta": "Mantenimiento preventivo de cerrajería para comunidades y administradores de fincas en Granollers y el Vallès Oriental. Precio cerrado.",
+    "intro": "Damos mantenimiento de cerrajería a comunidades y administradores de fincas en Granollers y comarca: revisión de cierres, reparación de rozaduras y descuadres, y control de accesos. Un interlocutor fijo y precio cerrado en cada intervención.",
+    "incluye": [
+      "Revisión y ajuste de cierres de portal y zonas comunes",
+      "Reparación de rozaduras y descuadres de puertas",
+      "Control de accesos electrónico y videoportero",
+      "Atención prioritaria para administradores de fincas",
+      "Precio cerrado en cada intervención"
+    ],
+    "faq": [
+      { "q": "¿Trabajáis con administradores de fincas?", "a": "Sí. Ofrecemos un interlocutor fijo y precio cerrado por intervención, con atención prioritaria para administradores de fincas del Vallès Oriental." },
+      { "q": "¿Hacéis contratos de mantenimiento?", "a": "Adaptamos la fórmula a la comunidad: por intervención o con revisiones periódicas. Te damos las condiciones y el precio cerrado por escrito antes." }
+    ]
+  }
+]

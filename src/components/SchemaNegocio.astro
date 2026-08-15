@@ -1,0 +1,107 @@
+---
+// H1 · Schema completo (whitespace del sector: completitud mediana ~13%).
+// LocalBusiness + OpeningHoursSpecification 24/7 + (opcional) Service, FAQPage, BreadcrumbList, AggregateRating.
+import negocio from '../data/negocio.json';
+
+interface FaqItem { q: string; a: string; }
+interface Crumb { name: string; path: string; }
+interface Article { headline: string; description: string; datePublished: string; path: string; }
+interface Props {
+  serviceType?: string;
+  faq?: FaqItem[];
+  breadcrumb?: Crumb[];
+  article?: Article;
+}
+const { serviceType, faq = [], breadcrumb = [], article } = Astro.props;
+const base = (Astro.site ?? 'https://ejemplo-pendiente.example').toString().replace(/\/$/, '');
+const negocioId = `${base}/#negocio`;
+
+const graph: any[] = [
+  {
+    '@type': 'Locksmith',
+    '@id': negocioId,
+    name: negocio.nap.nombre,
+    telephone: negocio.telefono_e164,
+    url: base + '/',
+    description: 'Cerrajero 24 horas en Granollers y el Vallès Oriental. Precio cerrado por teléfono antes de desplazarnos.',
+    areaServed: negocio.nap.zona_servicio.map((c) => ({ '@type': 'City', name: c })),
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: negocio.nap.calle,
+      addressLocality: negocio.nap.localidad,
+      postalCode: negocio.nap.cp,
+      addressRegion: negocio.nap.region,
+      addressCountry: negocio.nap.pais,
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: negocio.nap.lat, longitude: negocio.nap.lng },
+    // H4 · 24/7
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: '00:00',
+        closes: '23:59',
+      },
+    ],
+    currenciesAccepted: 'EUR',
+    paymentAccepted: 'Efectivo, Tarjeta',
+  },
+];
+
+// AggregateRating SOLO con reseñas reales (nunca con las de ejemplo).
+if (!negocio.resenas_provisionales && negocio.resenas_total > 0) {
+  graph[0].aggregateRating = {
+    '@type': 'AggregateRating',
+    ratingValue: negocio.resenas_rating_medio,
+    reviewCount: negocio.resenas_total,
+  };
+}
+
+if (serviceType) {
+  graph.push({
+    '@type': 'Service',
+    name: `${serviceType} en ${negocio.nap.localidad}`,
+    serviceType,
+    provider: { '@id': negocioId },
+    areaServed: negocio.nap.zona_servicio.map((c) => ({ '@type': 'City', name: c })),
+  });
+}
+
+if (breadcrumb.length) {
+  graph.push({
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumb.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.name,
+      item: base + c.path,
+    })),
+  });
+}
+
+if (faq.length) {
+  graph.push({
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  });
+}
+
+if (article) {
+  graph.push({
+    '@type': 'BlogPosting',
+    headline: article.headline,
+    description: article.description,
+    datePublished: article.datePublished,
+    mainEntityOfPage: base + article.path,
+    author: { '@id': negocioId },
+    publisher: { '@id': negocioId },
+  });
+}
+
+const jsonld = { '@context': 'https://schema.org', '@graph': graph };
+---
+<script type="application/ld+json" set:html={JSON.stringify(jsonld)} is:inline />

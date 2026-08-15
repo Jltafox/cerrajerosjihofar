@@ -1,0 +1,50 @@
+---
+// Bloque PRECIOS · eje del posicionamiento D4 "precio cerrado sin sorpresas".
+// Precios de EJEMPLO mientras negocio.precios_provisionales sea true.
+import negocio from '../data/negocio.json';
+const fmt = (n: number | null) => (n === null ? 'A consultar' : n === 0 ? 'Se informa antes' : `desde ${n} €`);
+---
+<section id="precios" class="max-w-5xl mx-auto px-4 py-12">
+  <div class="text-center mb-8">
+    <h2 class="text-2xl sm:text-3xl font-bold text-brand-900">Precios de cerrajería en {negocio.nap.localidad}</h2>
+    <p class="mt-2 text-slate-600 max-w-2xl mx-auto">{negocio.posicionamiento.subclaim}</p>
+  </div>
+
+  {negocio.precios_provisionales && (
+    <p class="mb-6 rounded-md bg-amber-50 border border-amber-300 text-amber-900 text-sm px-4 py-3">
+      <strong>Tarifas de ejemplo.</strong> {negocio.precios_nota}
+    </p>
+  )}
+
+  <div class="grid gap-6 sm:grid-cols-2">
+    {negocio.precios.map((grupo) => (
+      <div class="rounded-xl border border-slate-200 overflow-hidden">
+        <h3 class="bg-brand-900 text-white font-semibold px-4 py-3">{grupo.grupo}</h3>
+        <ul class="divide-y divide-slate-100">
+          {grupo.items.map((item) => (
+            <li class="flex items-baseline justify-between gap-3 px-4 py-3">
+              <div>
+                <p class="font-medium text-slate-800">{item.servicio}</p>
+                {item.nota && <p class="text-xs text-slate-500">{item.nota}</p>}
+              </div>
+              <span class="shrink-0 font-semibold text-brand-700 whitespace-nowrap">{fmt(item.desde)}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-8 rounded-xl bg-slate-50 border border-slate-200 p-5 text-sm text-slate-700">
+    <p class="font-semibold text-slate-900 mb-1">Cómo funciona nuestro precio</p>
+    <ul class="list-disc pl-5 space-y-1">
+      <li>Te damos el precio por teléfono <strong>antes</strong> de salir.</li>
+      <li>Precio cerrado por escrito antes de tocar la puerta.</li>
+      <li>El desplazamiento se informa siempre por adelantado.</li>
+      <li>Prioridad técnica: abrir sin romper siempre que sea posible.</li>
+    </ul>
+    <a href={`tel:${negocio.telefono_e164}`} class="inline-block mt-4 rounded-lg bg-brand-700 text-white font-semibold px-5 py-2.5 hover:bg-brand-900">
+      Pedir precio cerrado · {negocio.telefono_display}
+    </a>
+  </div>
+</section>

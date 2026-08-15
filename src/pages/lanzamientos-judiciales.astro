@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+import SchemaNegocio from '../components/SchemaNegocio.astro';
+import negocio from '../data/negocio.json';
+
+// Nicho B2B (Tier 4). NOTA: la experiencia real en lanzamientos está pendiente de
+// confirmar con el cliente (memoria §10). El copy ofrece el servicio SIN afirmar
+// historial ni juzgados concretos. Ajustar cuando el cliente confirme.
+
+const faq = [
+  { q: '¿Colaboráis con procuradores y administradores de fincas?', a: 'Sí. Damos apoyo de cerrajería en diligencias de lanzamiento a procuradores, administradores de fincas y despachos, coordinando la cita y con disponibilidad para la fecha señalada.' },
+  { q: '¿Qué incluye el servicio de cerrajería en un lanzamiento?', a: 'Apertura de la vivienda o local el día de la diligencia, cambio inmediato de bombín o cerradura y entrega de las llaves a quien indique el juzgado o la propiedad. Todo con precio cerrado por escrito antes.' },
+  { q: '¿Trabajáis en toda la comarca?', a: 'Damos servicio en Granollers, el Vallès Oriental y el área de Barcelona. Consúltanos la localidad concreta y te confirmamos disponibilidad y precio cerrado.' },
+];
+
+const breadcrumb = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Lanzamientos judiciales', path: '/lanzamientos-judiciales/' },
+];
+
+const title = `Cerrajero para lanzamientos judiciales · Vallès Oriental y Barcelona | ${negocio.marca}`;
+const description = 'Cerrajería para lanzamientos judiciales en el Vallès Oriental y Barcelona. Apoyo a procuradores y administradores de fincas. Precio cerrado por escrito.';
+---
+<Base title={title} description={description} canonicalPath="/lanzamientos-judiciales/">
+  <SchemaNegocio slot="head" serviceType="Cerrajería para lanzamientos judiciales" faq={faq} breadcrumb={breadcrumb} />
+
+  <nav aria-label="Migas de pan" class="max-w-5xl mx-auto px-4 pt-5 text-xs text-slate-500">
+    <a href="/" class="hover:text-brand-500">Inicio</a> ›
+    <span class="text-slate-700">Lanzamientos judiciales</span>
+  </nav>
+
+  <section class="bg-brand-900 text-white mt-4">
+    <div class="max-w-5xl mx-auto px-4 py-12 text-center">
+      <p class="text-accent-500 font-semibold uppercase tracking-wide text-sm">Servicio profesional · B2B</p>
+      <h1 class="mt-3 text-3xl sm:text-4xl font-bold">Cerrajero para lanzamientos judiciales</h1>
+      <p class="mt-4 text-lg text-slate-200 max-w-2xl mx-auto">Apoyo de cerrajería a procuradores y administradores de fincas en el Vallès Oriental y Barcelona. Disponibilidad para la fecha señalada y precio cerrado por escrito.</p>
+      <a href={`tel:${negocio.telefono_e164}`} class="inline-block mt-6 rounded-lg bg-accent-500 text-brand-900 font-bold px-6 py-3 hover:brightness-95">
+        📞 Coordinar una diligencia · {negocio.telefono_display}
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold text-brand-900 mb-6">Qué ofrecemos en una diligencia de lanzamiento</h2>
+    <ul class="grid gap-3 sm:grid-cols-2">
+      {[
+        'Apertura de la vivienda o local el día señalado',
+        'Cambio inmediato de bombín o cerradura tras la apertura',
+        'Entrega de llaves según indique el juzgado o la propiedad',
+        'Disponibilidad para la fecha y hora de la diligencia',
+        'Discreción y trato profesional',
+        'Precio cerrado por escrito antes de actuar',
+      ].map((item) => (
+        <li class="flex items-start gap-3 rounded-lg border border-slate-200 px-4 py-3">
+          <span class="text-brand-500 font-bold">✓</span>
+          <span class="text-slate-700">{item}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 pb-12">
+    <h2 class="text-2xl font-bold text-brand-900 mb-6">Preguntas frecuentes</h2>
+    <div class="space-y-3">
+      {faq.map((f) => (
+        <details class="rounded-lg border border-slate-200 px-4 py-3">
+          <summary class="font-semibold text-slate-800 cursor-pointer">{f.q}</summary>
+          <p class="mt-2 text-sm text-slate-600">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-slate-50 border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 py-10 text-center">
+      <p class="text-lg font-semibold text-brand-900">¿Gestiona un despacho o una comunidad?</p>
+      <p class="mt-2 text-slate-600">Coordinamos la cerrajería de la diligencia con precio cerrado por escrito.</p>
+      <a href={`tel:${negocio.telefono_e164}`} class="inline-block mt-4 rounded-lg bg-brand-700 text-white font-semibold px-6 py-3 hover:bg-brand-900">
+        📞 {negocio.telefono_display}
+      </a>
+    </div>
+  </section>
+</Base>

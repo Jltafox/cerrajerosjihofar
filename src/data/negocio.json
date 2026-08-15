@@ -1,0 +1,75 @@
+{
+  "_aviso": "Marca, teléfono, dirección y dominio son REALES. Precios y reseñas siguen siendo de ejemplo (flags precios_provisionales / resenas_provisionales) y el técnico de sobre-nosotros está pendiente (tecnico_provisional).",
+  "provisional": false,
+  "tecnico_provisional": true,
+
+  "marca": "Cerrajeros Jihofar",
+  "dominio": "https://cerrajerosjihofar.com",
+  "telefono_e164": "+34936942854",
+  "telefono_display": "936 94 28 54",
+  "whatsapp_e164": "",
+
+  "nap": {
+    "nombre": "Cerrajeros Jihofar",
+    "calle": "Carrer de la Princesa, 4",
+    "localidad": "Granollers",
+    "cp": "08401",
+    "region": "Barcelona",
+    "pais": "ES",
+    "lat": 41.6051486,
+    "lng": 2.2843395,
+    "horario_texto": "Abierto 24 horas, todos los días",
+    "zona_servicio": ["Granollers", "Canovelles", "Les Franqueses del Vallès", "La Roca del Vallès", "Montmeló", "Vilanova del Vallès"]
+  },
+
+  "posicionamiento": {
+    "claim": "Precio cerrado antes de salir. Sin sorpresas al llegar.",
+    "subclaim": "Te confirmamos el precio por teléfono antes de desplazarnos. Lo que hablamos es lo que pagas."
+  },
+
+  "precios_provisionales": true,
+  "precios_nota": "Tarifas orientativas de EJEMPLO. El precio final se confirma por teléfono antes del desplazamiento. Pendiente de precios reales del cliente.",
+  "precios": [
+    {
+      "grupo": "Aperturas de puerta",
+      "items": [
+        { "servicio": "Apertura de puerta (horario diurno)", "desde": 60, "nota": "Sin daños siempre que sea posible" },
+        { "servicio": "Apertura de puerta (nocturno / festivo)", "desde": 90, "nota": "Recargo por horario" },
+        { "servicio": "Apertura de puerta blindada / acorazada", "desde": 120, "nota": "Según tipo de cerradura" }
+      ]
+    },
+    {
+      "grupo": "Bombines y cerraduras",
+      "items": [
+        { "servicio": "Cambio de bombín estándar", "desde": 70, "nota": "Material aparte, presupuestado antes" },
+        { "servicio": "Cambio de bombín de alta seguridad (antibumping)", "desde": 120, "nota": "Llave incopiable con tarjeta" },
+        { "servicio": "Cambio de cerradura de sobreponer", "desde": 90, "nota": "Mano de obra" },
+        { "servicio": "Cambio de cerradura de embutir", "desde": 110, "nota": "Mano de obra" }
+      ]
+    },
+    {
+      "grupo": "Refuerzos de seguridad",
+      "items": [
+        { "servicio": "Instalación de cerrojo de sobreponer", "desde": 80, "nota": "Segundo punto de cierre" },
+        { "servicio": "Instalación de escudo protector", "desde": 60, "nota": "Refuerzo del cilindro" }
+      ]
+    },
+    {
+      "grupo": "Comunidades y otros",
+      "items": [
+        { "servicio": "Amaestramiento de llaves (comunidad)", "desde": null, "nota": "Presupuesto por proyecto" },
+        { "servicio": "Desplazamiento", "desde": 0, "nota": "Consultar: se informa antes de salir" }
+      ]
+    }
+  ],
+
+  "resenas_provisionales": true,
+  "resenas_nota": "Reseñas de EJEMPLO para maquetar el bloque. Se sustituirán por reseñas reales (estrategia aparte). No publicar estas.",
+  "resenas_rating_medio": 4.9,
+  "resenas_total": 0,
+  "resenas": [
+    { "autor": "[Ejemplo] Cliente Granollers", "rating": 5, "fecha": "2026-06-01", "texto": "Me quedé fuera de casa de noche y me dieron el precio por teléfono antes de venir. Lo que dijeron es lo que pagué. Sin sustos." },
+    { "autor": "[Ejemplo] Cliente Les Franqueses", "rating": 5, "fecha": "2026-05-18", "texto": "Cambio de bombín de alta seguridad. Presupuesto claro por escrito antes de tocar la puerta. Muy profesional." },
+    { "autor": "[Ejemplo] Administrador de fincas", "rating": 5, "fecha": "2026-04-27", "texto": "Amaestramiento para una comunidad. Trato cercano y precio cerrado desde el principio. Repetiremos." }
+  ]
+}

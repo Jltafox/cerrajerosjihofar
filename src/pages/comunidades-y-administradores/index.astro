@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import SchemaNegocio from '../../components/SchemaNegocio.astro';
+import comunidades from '../../data/comunidades.json';
+import negocio from '../../data/negocio.json';
+
+const breadcrumb = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Comunidades y administradores', path: '/comunidades-y-administradores/' },
+];
+const title = `Cerrajería para comunidades y administradores de fincas en Granollers | ${negocio.marca}`;
+const description = 'Cerrajería para comunidades de vecinos y administradores de fincas en Granollers y el Vallès Oriental: amaestramiento, mantenimiento y control de accesos. Precio cerrado.';
+---
+<Base title={title} description={description} canonicalPath="/comunidades-y-administradores/">
+  <SchemaNegocio slot="head" breadcrumb={breadcrumb} />
+
+  <section class="bg-brand-900 text-white">
+    <div class="max-w-5xl mx-auto px-4 py-12 text-center">
+      <p class="text-accent-500 font-semibold uppercase tracking-wide text-sm">Servicio profesional · B2B</p>
+      <h1 class="mt-3 text-3xl sm:text-4xl font-bold">Comunidades y administradores de fincas</h1>
+      <p class="mt-4 text-lg text-slate-200 max-w-2xl mx-auto">Un interlocutor fijo para tu comunidad en Granollers y el Vallès Oriental. Amaestramiento, mantenimiento y control de accesos, con precio cerrado por escrito.</p>
+      <a href={`tel:${negocio.telefono_e164}`} class="inline-block mt-6 rounded-lg bg-accent-500 text-brand-900 font-bold px-6 py-3 hover:brightness-95">
+        📞 Hablar con nosotros · {negocio.telefono_display}
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 py-12">
+    <div class="grid gap-5 sm:grid-cols-2">
+      {comunidades.map((s) => (
+        <a href={`/comunidades-y-administradores/${s.slug}/`} class="block rounded-xl border border-slate-200 p-5 hover:border-brand-500 hover:shadow-sm transition">
+          <h2 class="font-bold text-brand-900">{s.nav}</h2>
+          <p class="mt-2 text-sm text-slate-600">{s.meta}</p>
+          <span class="mt-3 inline-block text-brand-700 font-semibold text-sm">Ver servicio →</span>
+        </a>
+      ))}
+      <a href="/lanzamientos-judiciales/" class="block rounded-xl border border-slate-200 p-5 hover:border-brand-500 hover:shadow-sm transition">
+        <h2 class="font-bold text-brand-900">Lanzamientos judiciales</h2>
+        <p class="mt-2 text-sm text-slate-600">Apoyo de cerrajería a procuradores y administradores en diligencias de lanzamiento.</p>
+        <span class="mt-3 inline-block text-brand-700 font-semibold text-sm">Ver servicio →</span>
+      </a>
+    </div>
+  </section>
+</Base>

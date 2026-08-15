@@ -1,0 +1,84 @@
+---
+import Base from '../../layouts/Base.astro';
+import SchemaNegocio from '../../components/SchemaNegocio.astro';
+import servicios from '../../data/servicios.json';
+import negocio from '../../data/negocio.json';
+
+export function getStaticPaths() {
+  return servicios.map((s) => ({ params: { slug: s.slug }, props: { servicio: s } }));
+}
+
+const { servicio } = Astro.props;
+const otros = servicios.filter((s) => s.slug !== servicio.slug);
+
+const breadcrumb = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Servicios', path: '/servicios/' },
+  { name: servicio.nav, path: `/servicios/${servicio.slug}/` },
+];
+
+const title = `${servicio.h1} | ${negocio.marca}`;
+---
+<Base title={title} description={servicio.meta} canonicalPath={`/servicios/${servicio.slug}/`}>
+  <SchemaNegocio slot="head" serviceType={servicio.serviceType} faq={servicio.faq} breadcrumb={breadcrumb} />
+
+  <!-- Migas de pan -->
+  <nav aria-label="Migas de pan" class="max-w-5xl mx-auto px-4 pt-5 text-xs text-slate-500">
+    <a href="/" class="hover:text-brand-500">Inicio</a> ›
+    <a href="/servicios/" class="hover:text-brand-500">Servicios</a> ›
+    <span class="text-slate-700">{servicio.nav}</span>
+  </nav>
+
+  <!-- HERO (H4) -->
+  <section class="bg-brand-900 text-white mt-4">
+    <div class="max-w-5xl mx-auto px-4 py-12 text-center">
+      <p class="text-accent-500 font-semibold uppercase tracking-wide text-sm">Cerrajero 24h · {negocio.nap.localidad}</p>
+      <h1 class="mt-3 text-3xl sm:text-4xl font-bold">{servicio.h1}</h1>
+      <p class="mt-4 text-lg text-slate-200 max-w-2xl mx-auto">{servicio.intro}</p>
+      <a href={`tel:${negocio.telefono_e164}`} class="inline-block mt-6 rounded-lg bg-accent-500 text-brand-900 font-bold px-6 py-3 hover:brightness-95">
+        📞 Pedir precio cerrado · {negocio.telefono_display}
+      </a>
+    </div>
+  </section>
+
+  <!-- Qué incluye -->
+  <section class="max-w-5xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold text-brand-900 mb-6">¿Qué incluye {servicio.nav.toLowerCase()} en {negocio.nap.localidad}?</h2>
+    <ul class="grid gap-3 sm:grid-cols-2">
+      {servicio.incluye.map((item) => (
+        <li class="flex items-start gap-3 rounded-lg border border-slate-200 px-4 py-3">
+          <span class="text-brand-500 font-bold">✓</span>
+          <span class="text-slate-700">{item}</span>
+        </li>
+      ))}
+    </ul>
+    <a href="/precios/" class="inline-block mt-6 text-brand-700 font-semibold underline">Ver precios orientativos →</a>
+  </section>
+
+  <!-- FAQ (visible + FAQPage schema) -->
+  <section class="max-w-3xl mx-auto px-4 pb-12">
+    <h2 class="text-2xl font-bold text-brand-900 mb-6">Preguntas frecuentes</h2>
+    <div class="space-y-3">
+      {servicio.faq.map((f) => (
+        <details class="rounded-lg border border-slate-200 px-4 py-3">
+          <summary class="font-semibold text-slate-800 cursor-pointer">{f.q}</summary>
+          <p class="mt-2 text-sm text-slate-600">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- Otros servicios (internal linking) -->
+  <section class="bg-slate-50 border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 py-12">
+      <h2 class="text-xl font-bold text-brand-900 mb-6">Otros servicios en {negocio.nap.localidad}</h2>
+      <div class="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+        {otros.map((s) => (
+          <a href={`/servicios/${s.slug}/`} class="rounded-lg bg-white border border-slate-200 px-4 py-3 hover:border-brand-500 hover:text-brand-700 font-medium text-slate-700">
+            {s.nav}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

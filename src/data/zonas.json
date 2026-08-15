@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "canovelles",
+    "nombre": "Canovelles",
+    "cp": "08420",
+    "lat": 41.6167,
+    "lng": 2.2814,
+    "intro": "Canovelles está pegado a Granollers, así que llegamos en muy poco tiempo para cualquier urgencia de cerrajería. Aperturas 24 horas, cambios de cerradura y refuerzos de seguridad, siempre con el precio cerrado por teléfono antes de salir.",
+    "faq": [
+      { "q": "¿Cuánto tardáis en llegar a Canovelles?", "a": "Canovelles limita con Granollers, así que la llegada es rápida. Al llamar te damos un tiempo comprometido y el precio cerrado antes de desplazarnos." },
+      { "q": "¿Atendéis urgencias de noche en Canovelles?", "a": "Sí, trabajamos 24 horas en Canovelles, también de noche y en festivo. El recargo por horario, si lo hay, se te comunica antes de salir." }
+    ]
+  },
+  {
+    "slug": "les-franqueses-del-valles",
+    "nombre": "Les Franqueses del Vallès",
+    "cp": "08520",
+    "lat": 41.6333,
+    "lng": 2.2833,
+    "intro": "Cubrimos Les Franqueses del Vallès y sus núcleos (Corró d'Avall, Corró d'Amunt, Bellavista, Marata, Llerona) con servicio de cerrajería 24 horas. Aperturas sin romper siempre que es posible y precio cerrado antes de desplazarnos.",
+    "faq": [
+      { "q": "¿Trabajáis en todos los núcleos de Les Franqueses?", "a": "Sí, atendemos Corró d'Avall, Bellavista, Llerona y el resto de núcleos de Les Franqueses del Vallès. Te confirmamos el precio por teléfono antes de salir." },
+      { "q": "¿Podéis cambiar un bombín el mismo día en Les Franqueses?", "a": "En la mayoría de casos sí. Al llamar te damos el precio del bombín y de la mano de obra, cerrado antes de empezar." }
+    ]
+  },
+  {
+    "slug": "la-roca-del-valles",
+    "nombre": "La Roca del Vallès",
+    "cp": "08430",
+    "lat": 41.5833,
+    "lng": 2.3333,
+    "intro": "Damos servicio de cerrajería 24 horas en La Roca del Vallès y su entorno, incluida la zona comercial de La Roca Village. Aperturas de puerta, cambios de cerradura y alta seguridad, con el precio cerrado por teléfono antes de salir.",
+    "faq": [
+      { "q": "¿Atendéis la zona de La Roca del Vallès de noche?", "a": "Sí, en La Roca del Vallès trabajamos 24 horas. Te damos un tiempo de llegada comprometido y el precio cerrado al llamar." },
+      { "q": "¿Hacéis instalaciones de seguridad en La Roca?", "a": "Sí: bombines de alta seguridad, escudos y cerrojos. Te asesoramos y te damos el precio cerrado antes de instalar." }
+    ]
+  },
+  {
+    "slug": "montmelo",
+    "nombre": "Montmeló",
+    "cp": "08160",
+    "lat": 41.5522,
+    "lng": 2.3003,
+    "intro": "Atendemos Montmeló con servicio de cerrajería 24 horas, incluidas las puntas de actividad del Circuit de Barcelona-Catalunya. Aperturas, cambios de cerradura y refuerzos de seguridad, con precio cerrado por teléfono antes de desplazarnos.",
+    "faq": [
+      { "q": "¿Cuánto cuesta una apertura de puerta en Montmeló?", "a": "Te damos el precio cerrado por teléfono antes de salir, según el tipo de puerta y cerradura. Sin sorpresas al llegar a Montmeló." },
+      { "q": "¿Trabajáis fines de semana en Montmeló?", "a": "Sí, atendemos Montmeló los 7 días, 24 horas. El recargo por horario nocturno o festivo, si aplica, se comunica antes." }
+    ]
+  },
+  {
+    "slug": "vilanova-del-valles",
+    "nombre": "Vilanova del Vallès",
+    "cp": "08410",
+    "lat": 41.5539,
+    "lng": 2.3486,
+    "intro": "Cubrimos Vilanova del Vallès y sus urbanizaciones con servicio de cerrajería 24 horas. Muchas viviendas unifamiliares con puertas y cerraduras de mayor seguridad: te asesoramos y te damos el precio cerrado antes de actuar.",
+    "faq": [
+      { "q": "¿Atendéis las urbanizaciones de Vilanova del Vallès?", "a": "Sí, damos servicio en el casco y en las urbanizaciones de Vilanova del Vallès. Te confirmamos el tiempo de llegada y el precio cerrado al llamar." },
+      { "q": "¿Reforzáis la seguridad de chalets en Vilanova?", "a": "Sí: bombines de alta seguridad, escudos acorazados y cerrojos. Valoramos tu puerta y te damos el precio cerrado antes de instalar." }
+    ]
+  }
+]

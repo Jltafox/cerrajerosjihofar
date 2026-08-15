@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+/* Paleta base — provisional, sin identidad de marca aún.
+   Cuando haya marca, ajustar --color-brand-* aquí. */
+@theme {
+  --color-brand-900: #0f2a43;
+  --color-brand-700: #1a4971;
+  --color-brand-500: #2f6db0;
+  --color-accent-500: #e2b400;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}

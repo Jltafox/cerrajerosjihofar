@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "cuanto-cuesta-abrir-una-puerta",
+    "titulo": "¿Cuánto cuesta abrir una puerta en Granollers?",
+    "fecha": "2026-07-01",
+    "resumen": "Qué influye en el precio de una apertura de puerta y por qué te lo damos cerrado antes de salir.",
+    "servicio_rel": "apertura-de-puertas",
+    "cuerpo": [
+      { "h2": "De qué depende el precio", "p": "El precio de una apertura depende sobre todo de tres cosas: el tipo de puerta (madera, blindada o acorazada), el estado de la cerradura y el horario (diurno, nocturno o festivo). Una apertura sencilla de día no cuesta lo mismo que una puerta acorazada a las tres de la madrugada." },
+      { "h2": "Por qué te lo decimos antes de salir", "p": "El miedo habitual no es que sea caro, es que el precio cambie al llegar. Por eso te confirmamos el precio por teléfono antes de desplazarnos y lo dejamos cerrado por escrito antes de tocar la puerta. Lo que hablamos es lo que pagas." },
+      { "h2": "Abrir sin romper", "p": "Siempre que la cerradura lo permite, abrimos con técnicas no destructivas y sin dañar la puerta. Solo se rompe si no hay alternativa, y te lo explicamos antes." }
+    ]
+  },
+  {
+    "slug": "cuanto-cuesta-cambiar-una-cerradura",
+    "titulo": "¿Cuánto cuesta cambiar una cerradura?",
+    "fecha": "2026-06-15",
+    "resumen": "Diferencias de precio entre cerraduras de sobreponer y de embutir, y qué incluye el trabajo.",
+    "servicio_rel": "cambio-de-cerraduras",
+    "cuerpo": [
+      { "h2": "Sobreponer o embutir", "p": "El precio cambia según el tipo de cerradura. Las de sobreponer suelen ser más sencillas de sustituir; las de embutir requieren más trabajo. En ambos casos te damos el precio de la cerradura y de la mano de obra por separado y cerrado antes de empezar." },
+      { "h2": "Cuándo conviene cambiarla", "p": "Tras un robo o intento, al perder las llaves, después de una mudanza o cuando la cerradura empieza a fallar. Si tienes una cerradura de gorja antigua, podemos adaptarla a perfil europeo, más seguro y con mejor oferta de bombines." },
+      { "h2": "Qué incluye el precio", "p": "El precio cerrado incluye la mano de obra y la cerradura acordada. Si aparece algo que no estaba previsto, te lo consultamos antes de continuar." }
+    ]
+  },
+  {
+    "slug": "merece-la-pena-un-bombin-antibumping",
+    "titulo": "¿Merece la pena un bombín antibumping?",
+    "fecha": "2026-05-20",
+    "resumen": "Qué es el bumping, cómo lo evita un bombín de alta seguridad y cuándo compensa.",
+    "servicio_rel": "bombines-alta-seguridad",
+    "cuerpo": [
+      { "h2": "Qué es el bumping", "p": "El bumping es una técnica de apertura rápida que aprovecha el juego de los pistones de un bombín estándar. Es una de las formas más comunes de abrir una puerta sin la llave, y no deja apenas rastro." },
+      { "h2": "Cómo lo evita un bombín antibumping", "p": "Un bombín de alta seguridad incorpora pistones y mecanismos que neutralizan el bumping, y suele añadir protección antiganzúa y antitaladro, además de llave incopiable con tarjeta de propiedad." },
+      { "h2": "Cuándo compensa", "p": "Si tu puerta es el acceso principal de la vivienda y el bombín es antiguo, el salto de seguridad compensa. Te asesoramos sin compromiso y te damos el precio cerrado del bombín y la instalación antes de tocar nada." }
+    ]
+  }
+]

@@ -35,6 +35,11 @@ const description = `Contacta con tu cerrajero 24 horas en ${negocio.nap.localid
         <p class="mt-1 text-slate-600 text-sm">Envíanos una foto de tu cerradura</p>
       </a>
     )}
+    <a href={`mailto:${negocio.email}`} class="rounded-xl border border-slate-200 p-6 hover:border-brand-500">
+      <p class="text-3xl">✉️</p>
+      <h2 class="mt-2 font-bold text-brand-900">Email</h2>
+      <p class="mt-1 text-brand-700 font-semibold text-sm break-all">{negocio.email}</p>
+    </a>
     <div class="rounded-xl border border-slate-200 p-6">
       <p class="text-3xl">🕐</p>
       <h2 class="mt-2 font-bold text-brand-900">Horario</h2>

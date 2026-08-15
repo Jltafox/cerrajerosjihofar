@@ -2,7 +2,8 @@
 // Bloque PRECIOS · eje del posicionamiento D4 "precio cerrado sin sorpresas".
 // Precios de EJEMPLO mientras negocio.precios_provisionales sea true.
 import negocio from '../data/negocio.json';
-const fmt = (n: number | null) => (n === null ? 'A consultar' : n === 0 ? 'Se informa antes' : `desde ${n} €`);
+const iva = negocio.precios_sin_iva ? ' + IVA' : '';
+const fmt = (n: number | null) => (n === null ? 'A consultar' : n === 0 ? 'Se informa antes' : `desde ${n} €${iva}`);
 ---
 <section id="precios" class="max-w-5xl mx-auto px-4 py-12">
   <div class="text-center mb-8">
@@ -10,10 +11,12 @@ const fmt = (n: number | null) => (n === null ? 'A consultar' : n === 0 ? 'Se in
     <p class="mt-2 text-slate-600 max-w-2xl mx-auto">{negocio.posicionamiento.subclaim}</p>
   </div>
 
-  {negocio.precios_provisionales && (
+  {negocio.precios_provisionales ? (
     <p class="mb-6 rounded-md bg-amber-50 border border-amber-300 text-amber-900 text-sm px-4 py-3">
       <strong>Tarifas de ejemplo.</strong> {negocio.precios_nota}
     </p>
+  ) : (
+    <p class="mb-6 text-sm text-slate-500">{negocio.precios_nota}</p>
   )}
 
   <div class="grid gap-6 sm:grid-cols-2">

@@ -2,6 +2,7 @@
   "_aviso": "Marca, teléfono, dirección y dominio son REALES. Precios y reseñas siguen siendo de ejemplo (flags precios_provisionales / resenas_provisionales) y el técnico de sobre-nosotros está pendiente (tecnico_provisional).",
   "provisional": false,
   "tecnico_provisional": true,
+  "prelaunch": true,
 
   "marca": "Cerrajeros Jihofar",
   "dominio": "https://cerrajerosjihofar.com",
@@ -27,38 +28,38 @@
     "subclaim": "Te confirmamos el precio por teléfono antes de desplazarnos. Lo que hablamos es lo que pagas."
   },
 
-  "precios_provisionales": true,
-  "precios_nota": "Tarifas orientativas de EJEMPLO. El precio final se confirma por teléfono antes del desplazamiento. Pendiente de precios reales del cliente.",
+  "precios_provisionales": false,
+  "precios_sin_iva": true,
+  "precios_nota": "Precios sin IVA. Algunos servicios se confirman por teléfono según el caso; el total siempre se cierra antes de salir.",
   "precios": [
     {
       "grupo": "Aperturas de puerta",
       "items": [
-        { "servicio": "Apertura de puerta (horario diurno)", "desde": 60, "nota": "Sin daños siempre que sea posible" },
-        { "servicio": "Apertura de puerta (nocturno / festivo)", "desde": 90, "nota": "Recargo por horario" },
-        { "servicio": "Apertura de puerta blindada / acorazada", "desde": 120, "nota": "Según tipo de cerradura" }
-      ]
-    },
-    {
-      "grupo": "Bombines y cerraduras",
-      "items": [
-        { "servicio": "Cambio de bombín estándar", "desde": 70, "nota": "Material aparte, presupuestado antes" },
-        { "servicio": "Cambio de bombín de alta seguridad (antibumping)", "desde": 120, "nota": "Llave incopiable con tarjeta" },
-        { "servicio": "Cambio de cerradura de sobreponer", "desde": 90, "nota": "Mano de obra" },
-        { "servicio": "Cambio de cerradura de embutir", "desde": 110, "nota": "Mano de obra" }
+        { "servicio": "Apertura de puerta", "desde": 85, "nota": "Sin daños siempre que sea posible" },
+        { "servicio": "Apertura nocturna o en festivo", "desde": null, "nota": "Recargo por horario; se informa antes de salir" },
+        { "servicio": "Apertura de puerta blindada / acorazada", "desde": null, "nota": "Según tipo de cerradura" }
       ]
     },
     {
       "grupo": "Refuerzos de seguridad",
       "items": [
-        { "servicio": "Instalación de cerrojo de sobreponer", "desde": 80, "nota": "Segundo punto de cierre" },
-        { "servicio": "Instalación de escudo protector", "desde": 60, "nota": "Refuerzo del cilindro" }
+        { "servicio": "Instalación de cerrojo", "desde": 100, "nota": "Según el cerrojo y la puerta" },
+        { "servicio": "Escudo blindado", "desde": 160, "nota": "Refuerzo del cilindro frente a extracción" }
+      ]
+    },
+    {
+      "grupo": "Bombines y cerraduras",
+      "items": [
+        { "servicio": "Cambio de bombín", "desde": null, "nota": "Se confirma según tipo" },
+        { "servicio": "Cambio de bombín de alta seguridad", "desde": null, "nota": "Se confirma según tipo" },
+        { "servicio": "Cambio de cerradura", "desde": null, "nota": "Se confirma según tipo" }
       ]
     },
     {
       "grupo": "Comunidades y otros",
       "items": [
         { "servicio": "Amaestramiento de llaves (comunidad)", "desde": null, "nota": "Presupuesto por proyecto" },
-        { "servicio": "Desplazamiento", "desde": 0, "nota": "Consultar: se informa antes de salir" }
+        { "servicio": "Desplazamiento", "desde": 0, "nota": "Se informa antes de salir" }
       ]
     }
   ],

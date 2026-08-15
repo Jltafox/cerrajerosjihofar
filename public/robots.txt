@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://cerrajerosjihofar.com/sitemap-index.xml

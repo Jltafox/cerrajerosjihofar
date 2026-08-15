@@ -18,7 +18,7 @@ const canonical = new URL(canonicalPath, Astro.site ?? 'https://ejemplo-pendient
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <meta name="robots" content="index,follow" />
+    <meta name="robots" content={negocio.prelaunch ? 'noindex,nofollow' : 'index,follow'} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />

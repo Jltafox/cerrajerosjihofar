@@ -21,7 +21,7 @@
     "lat": 41.6051486,
     "lng": 2.2843395,
     "horario_texto": "Abierto 24 horas, todos los días",
-    "zona_servicio": ["Granollers", "Canovelles", "Les Franqueses del Vallès", "La Roca del Vallès", "Montmeló", "Vilanova del Vallès"]
+    "zona_servicio": ["Granollers", "Canovelles", "Les Franqueses del Vallès", "La Roca del Vallès", "Montmeló", "Vilanova del Vallès", "Cardedeu", "Parets del Vallès", "Montornès del Vallès", "Lliçà d'Amunt", "Lliçà de Vall", "La Garriga", "L'Ametlla del Vallès", "Santa Eulàlia de Ronçana", "Bigues i Riells", "Mollet del Vallès", "Llinars del Vallès", "Sant Celoni", "Vallgorguina", "Sant Antoni de Vilamajor", "Sant Pere de Vilamajor", "Caldes de Montbui", "Cànoves i Samalús"]
   },
 
   "posicionamiento": {

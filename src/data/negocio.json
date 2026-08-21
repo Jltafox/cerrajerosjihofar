@@ -31,29 +31,29 @@
 
   "precios_provisionales": false,
   "precios_sin_iva": true,
-  "precios_nota": "Precios sin IVA. Algunos servicios se confirman por teléfono según el caso; el total siempre se cierra antes de salir.",
+  "precios_nota": "Precios sin IVA, para puertas de madera o blindadas; en puertas acorazadas varían (a consultar). Se dice siempre \"desde\": el total se cierra antes de salir.",
   "precios": [
     {
       "grupo": "Aperturas de puerta",
       "items": [
         { "servicio": "Apertura de puerta", "desde": 85, "nota": "Sin daños siempre que sea posible" },
         { "servicio": "Apertura nocturna o en festivo", "desde": null, "nota": "Recargo por horario; se informa antes de salir" },
-        { "servicio": "Apertura de puerta blindada / acorazada", "desde": null, "nota": "Según tipo de cerradura" }
-      ]
-    },
-    {
-      "grupo": "Refuerzos de seguridad",
-      "items": [
-        { "servicio": "Instalación de cerrojo", "desde": 100, "nota": "Según el cerrojo y la puerta" },
-        { "servicio": "Escudo blindado", "desde": 160, "nota": "Refuerzo del cilindro frente a extracción" }
+        { "servicio": "Apertura de puerta acorazada", "desde": null, "nota": "Varía según la puerta; a consultar" }
       ]
     },
     {
       "grupo": "Bombines y cerraduras",
       "items": [
-        { "servicio": "Cambio de bombín", "desde": null, "nota": "Se confirma según tipo" },
-        { "servicio": "Cambio de bombín de alta seguridad", "desde": null, "nota": "Se confirma según tipo" },
-        { "servicio": "Cambio de cerradura", "desde": null, "nota": "Se confirma según tipo" }
+        { "servicio": "Cambio de bombín", "desde": 80, "nota": "Bombín incluido (medida estándar 30×30). Puertas de madera o blindadas" },
+        { "servicio": "Bombín de alta seguridad", "desde": 180, "nota": "Según medidas" },
+        { "servicio": "Cambio de bombín en puerta acorazada", "desde": null, "nota": "Varía según medidas; a consultar" }
+      ]
+    },
+    {
+      "grupo": "Refuerzos de seguridad",
+      "items": [
+        { "servicio": "Instalación de cerrojo", "desde": 165, "nota": "Cerrojo incluido" },
+        { "servicio": "Escudo blindado", "desde": 160, "nota": "Refuerzo del cilindro frente a extracción" }
       ]
     },
     {

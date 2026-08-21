@@ -58,5 +58,53 @@
       { "q": "¿Atendéis las urbanizaciones de Vilanova del Vallès?", "a": "Sí, damos servicio en el casco y en las urbanizaciones de Vilanova del Vallès. Te confirmamos el tiempo de llegada y el precio cerrado al llamar." },
       { "q": "¿Reforzáis la seguridad de chalets en Vilanova?", "a": "Sí: bombines de alta seguridad, escudos acorazados y cerrojos. Valoramos tu puerta y te damos el precio cerrado antes de instalar." }
     ]
+  },
+  {
+    "slug": "cardedeu",
+    "nombre": "Cardedeu",
+    "cp": "08440",
+    "lat": 41.63852,
+    "lng": 2.35584,
+    "intro": "Damos servicio de cerrajería 24 horas en Cardedeu, del casco antiguo a las urbanizaciones. Aperturas sin romper siempre que es posible, cambio de cerraduras y bombines, con el precio cerrado por teléfono antes de salir.",
+    "faq": [
+      { "q": "¿Atendéis urgencias 24h en Cardedeu?", "a": "Sí, cubrimos Cardedeu las 24 horas, también de noche y en festivo. Al llamar te damos el precio cerrado y un tiempo de llegada comprometido." },
+      { "q": "¿Cuánto cuesta cambiar un bombín en Cardedeu?", "a": "Desde 80 € + IVA con el bombín incluido en puertas de madera o blindadas. Te lo confirmamos por teléfono antes de salir." }
+    ]
+  },
+  {
+    "slug": "la-garriga",
+    "nombre": "La Garriga",
+    "cp": "08530",
+    "lat": 41.68491,
+    "lng": 2.28658,
+    "intro": "Cubrimos La Garriga con servicio de cerrajería 24 horas, del centro a las torres y urbanizaciones. Aperturas, cambios de cerradura y alta seguridad, con precio cerrado antes de desplazarnos.",
+    "faq": [
+      { "q": "¿Trabajáis en las urbanizaciones de La Garriga?", "a": "Sí, damos servicio en el casco y en las urbanizaciones de La Garriga. Te confirmamos el tiempo de llegada y el precio cerrado al llamar." },
+      { "q": "¿Podéis reforzar la seguridad de mi puerta en La Garriga?", "a": "Sí: bombines de alta seguridad, escudos y cerrojos. Valoramos tu puerta y te damos el precio cerrado antes de instalar." }
+    ]
+  },
+  {
+    "slug": "corro-damunt",
+    "nombre": "Corró d'Amunt",
+    "cp": "08520",
+    "lat": 41.66783,
+    "lng": 2.32632,
+    "intro": "Atendemos Corró d'Amunt, núcleo de Les Franqueses del Vallès, con servicio de cerrajería 24 horas. Viviendas y masías más dispersas a las que llegamos igual de rápido, con precio cerrado por teléfono antes de salir.",
+    "faq": [
+      { "q": "¿Llegáis a Corró d'Amunt aunque sea zona dispersa?", "a": "Sí, cubrimos Corró d'Amunt y el entorno de Les Franqueses las 24 horas. Al llamar te damos un tiempo de llegada comprometido." },
+      { "q": "¿Hacéis aperturas sin dañar la puerta en Corró d'Amunt?", "a": "Siempre que la cerradura lo permite, abrimos sin daños. Solo se rompe si no hay alternativa, y te lo decimos antes." }
+    ]
+  },
+  {
+    "slug": "canoves-i-samalus",
+    "nombre": "Cànoves i Samalús",
+    "cp": "08445",
+    "lat": 41.70728,
+    "lng": 2.33825,
+    "intro": "Damos servicio de cerrajería 24 horas en Cànoves i Samalús, en el entorno rural del Montseny. Casas y urbanizaciones donde una buena cerradura importa: te asesoramos y te damos el precio cerrado antes de actuar.",
+    "faq": [
+      { "q": "¿Atendéis Cànoves i Samalús aunque esté algo apartado?", "a": "Sí, cubrimos Cànoves i Samalús las 24 horas. Te confirmamos el tiempo de llegada y el precio cerrado al llamar." },
+      { "q": "¿Instaláis cerraduras de más seguridad en Cànoves?", "a": "Sí: bombines de alta seguridad, escudos y cerrojos. Te damos el precio cerrado del material y la instalación antes de empezar." }
+    ]
   }
 ]
